@@ -1,0 +1,51 @@
+---
+title: 'Zapier'
+description: 'Text, title, and styling in standard markdown'
+icon: 'arrows-turn-to-dots'
+---
+
+## Overview
+
+<img height="200" src="/images/zapier-rss.png" />
+
+## Prerequisites
+
+Before you begin, ensure that you have the following:
+
+- A Zapier account. If you don't have one, you can sign up at [zapier.com](https://zapier.com/).
+- Access to the LLM Radar's New Models RSS feed URL.
+- Basic familiarity with creating Zaps in Zapier.
+
+## Step 1: Create a New Zap
+
+1. **Log in to Zapier:**
+   - Open your browser and log in to your Zapier account.
+
+2. **Create a New Zap:**
+   - Click on "Create Zap" in the upper-left corner of the Zapier dashboard.
+
+3. **Name Your Zap:**
+   - Give your Zap a meaningful name, such as "Monitor LLM Radar New Models".
+
+## Step 2: Set Up the RSS Trigger
+
+1. **Choose the Trigger App:**
+   - In the "Choose App & Event" section, search for "RSS by Zapier".
+   - Select "RSS by Zapier" as the trigger app.
+
+2. **Choose the Trigger Event:**
+   - Select "New Item in Feed" as the trigger event.
+   - Click "Continue".
+
+3. **Set Up the Trigger:**
+   - In the "Feed URL" field, enter the RSS feed URL:
+     ```
+     https://zapier.com/engine/rss/682420/llm-radar-new-models
+     ```
+   - If the feed requires authentication, click on "Show Options" and enter your username and password.
+   - Optionally, set other parameters like "Limit Items" or "Time between polls".
+   - Click "Continue".
+
+4. **Test the Trigger:**
+   - Zapier will fetch the latest item from the feed to ensure everything is working correctly.
+   - Review the data retrieved and click "Continue" if it looks correct.

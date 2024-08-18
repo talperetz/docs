@@ -1,0 +1,49 @@
+---
+title: 'Polling'
+description: "Periodically pull LLM Radar's New Models RSS feed"
+icon: 'angles-left'
+---
+## Step 1: Poll the RSS Feed
+
+```javascript
+// RSS feed URL and credentials
+const rssFeedUrl = 'https://zapier.com/engine/rss/682420/llm-radar-new-models';
+const username = 'your-username';
+const password = 'your-password';
+
+// Function to fetch and parse the RSS feed
+async function fetchRssFeed() {
+    try {
+        const response = await fetch(rssFeedUrl, {
+            headers: {
+                'Authorization': 'Basic ' + Buffer.from(`${username}:${password}`).toString('base64')
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const rssText = await response.text();
+        const parser = new DOMParser();
+        const rssDoc = parser.parseFromString(rssText, "application/xml");
+
+        const items = rssDoc.querySelectorAll('item');
+        items.forEach(item => {
+            console.log('New Model:', item.querySelector('title').textContent);
+            console.log('Description:', item.querySelector('description').textContent);
+            console.log('Link:', item.querySelector('link').textContent);
+            console.log('Published Date:', item.querySelector('pubDate').textContent);
+            console.log('-----------------------------');
+        });
+    } catch (error) {
+        console.error('Error fetching RSS feed:', error);
+    }
+}
+
+// Poll the RSS feed every 15 minutes
+setInterval(fetchRssFeed, 15 * 60 * 1000);
+
+// Initial fetch when the script starts
+fetchRssFeed();
+```
