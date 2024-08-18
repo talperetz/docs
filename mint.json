@@ -3,10 +3,10 @@
   "name": "LLM Radar Realtime API",
   "theme": "prism",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "/logo/sat-icon.png",
+    "light": "/logo/sat-icon.png"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/images/sat-icon.png",
   "colors": {
     "primary": "#000",
     "light": "#FFF",
