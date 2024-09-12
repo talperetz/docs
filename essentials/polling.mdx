@@ -8,16 +8,11 @@ icon: 'angles-left'
 ```javascript
 // RSS feed URL and credentials
 const rssFeedUrl = 'https://zapier.com/engine/rss/682420/llm-radar-new-models';
-const username = 'your-username';
-const password = 'your-password';
 
 // Function to fetch and parse the RSS feed
 async function fetchRssFeed() {
     try {
         const response = await fetch(rssFeedUrl, {
-            headers: {
-                'Authorization': 'Basic ' + Buffer.from(`${username}:${password}`).toString('base64')
-            }
         });
 
         if (!response.ok) {

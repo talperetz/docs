@@ -18,11 +18,7 @@ npm install rss-parser
 
 ```javascript
 const Parser = require('rss-parser');
-const parser = new Parser({
-    headers: {
-        'Authorization': 'Basic ' + Buffer.from('your-username:your-password').toString('base64')
-    }
-});
+const parser = new Parser();
 
 // RSS feed URL
 const rssFeedUrl = 'https://zapier.com/engine/rss/682420/llm-radar-new-models';

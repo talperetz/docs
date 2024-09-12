@@ -18,10 +18,6 @@
       "url": "mailto:hello@llmradar.ai"
     }
   ],
-  "topbarCtaButton": {
-    "name": "Get Your API Key",
-    "url": "https://www.llmradar.ai/api"
-  },
   "navigation": [
     {
       "group": "",
